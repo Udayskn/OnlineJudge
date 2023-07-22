@@ -8,6 +8,7 @@
 <body>
     <h1>My_OJ</h1>
     <h2>Choose the problem to solve</h2>
+    {% csrf_token %}
     {% if Problem_list %}
     <ul>
     {% for problem in Problem_list %}
