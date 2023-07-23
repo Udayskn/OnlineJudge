@@ -30,39 +30,43 @@
 
         .iov {
             border: 2px solid black;
-            height: 180px;
+            height: 500px;
             width: 300%;
             margin: 5px;
         }
+        .code-editor-box,
     </style>
 </head>
 
 <body>
     <h1>My_OJ</h1>
     <h2>All the best</h2>
-    <h3>{{problem.problem_name}}</h3>
-        <p id="Problemstatement">{{problem.problem_statement}}</p>
-    <div id="rowbox">
-        <div id="flexbox">
-            <select>
-                <option>C</option>
-                <option>C++</option>
-                <option>Python</option>
-            </select>
-            <textarea id="html-code"></textarea>
+    <h3>{{ProblemName}}</h3>
+        <p id="Problemstatement">
+            {{Problemstatement}}
+
+        </p>
+        <form action="{% url 'home:verdict' problem_id %}" method="POST" enctype="multipart/form-data">
+        
+        {% csrf_token %}
+        <div id="rowbox">
+            <div id="flexbox">
+                <select name='language'>
+                    <option>C</option>
+                    <option>C++</option>
+                    <option>Python</option>
+                </select>
+                <div class="code-editor-box">
+                    <h2>Code Editor</h2>
+                    <textarea name='code' rows="20" cols="100"></textarea>
+                </div>
+            </div>
+            <div id="flexbox">
+                <h5 class="iov">Verdict</h5>
+                <button type="submit">Submit</button>
+            </div>
         </div>
-        <div id="flexbox">
-            <label>Input</label>
-            <textarea></textarea>
-            <h5 class="iov">Output</h5>
-        </div>
-    </div>
-    <div id="flexbox">
-        <button>Run</button>
-        <button>Submit</button>
-        <h5 class="iov">Verdict</h5>
-    </div>
-    
+    </form>
     <script>
 
     </script>

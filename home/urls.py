@@ -19,5 +19,6 @@ from . import views
 app_name ='home'
 urlpatterns = [
     path('List/',views.ProblemListView.as_view(), name='Problemset'),
-    path('List/<int:pk>/',views.ProblemDetailView.as_view(), name='problempage'),
+    path('List/<int:problem_id>/',views.ProblemDetail, name='problempage'),
+    path('List/<int:problem_id>/verdict/',views.Verdict, name='verdict'),
 ]
