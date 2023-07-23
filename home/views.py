@@ -18,7 +18,7 @@ def ProblemDetail(request, problem_id):
     context = {
         'ProblemName': problem.problem_name,
         'Problemstatement': problem.problem_statement,
-        'problem_id': problem.id,
+        'problem_id': id,
         'problem': problem,
     }
     return render(request, 'home\problempage.html', context)
@@ -26,10 +26,14 @@ def ProblemDetail(request, problem_id):
 def Verdict(request, problem_id):
     # extract data from form
     form = CodeForm(request.POST)
-    user_code = ''
+    user_code = 'Not_valid'
     if form.is_valid():
         user_code = form.cleaned_data.get('user_code')
         user_code = user_code.replace('\r\n','\n').strip()
-        
+    user_code=request.POST['code']    
     language = request.POST['language']
-    return render(request, 'home\problempage.html')
+    context={
+        'Code': user_code,
+        'lang': language,
+    }
+    return render(request, 'home\problemverdict.html', context)

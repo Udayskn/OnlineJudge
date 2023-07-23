@@ -46,7 +46,7 @@
             {{Problemstatement}}
 
         </p>
-        <form action="{% url 'home:verdict' problem_id %}" method="POST" enctype="multipart/form-data">
+        <form action="{% url 'home:verdict' problem.id %}" method="POST" enctype="multipart/form-data">
         
         {% csrf_token %}
         <div id="rowbox">
