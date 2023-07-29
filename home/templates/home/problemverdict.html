@@ -9,8 +9,13 @@
     <h1>My_OJ</h1>
     <h2>Verdict</h2>
     <p>
-        {{Code}}
-        {{lang}}
+        {% comment %} <li>code:{{Code}}</li> {% endcomment %}
+        {% comment %} <li>lang:{{lang}}</li> {% endcomment %}
+        {% comment %} <li>res:{{res}}</li> {% endcomment %}
+        <li>verdict:{{verdict}}</li>
+        {{user_stderr}}
+        {% comment %} <li> user_stdout:{{user_stdout}}</li> {% endcomment %}
+        {% comment %} <li>verdict:{{user_stderr}}</li> {% endcomment %}
     </p>
     <button><a href="{% url 'home:Problemset' %}">Go back to ProblemList</a></button>
 </body>
