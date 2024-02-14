@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    
     <h1>LOGIN</h1>
     <div>
         <form action="" method="post">
@@ -20,6 +21,9 @@
     {% for message in messages %}
     <p id="messages">{{message}}</p>
     {% endfor %}
+    {% comment %} <div class="g-signin2" data-onsuccess="onSignIn"></div> {% endcomment %}
+    {% load socialaccount %}
+    <a href="{% provider_login_url 'google' %}?next=/List/">Login with google</a>
     Not have an account <button><a href="register">Register</a></button>
     <button><a href="List">Anonymous</a></button>
 </body>

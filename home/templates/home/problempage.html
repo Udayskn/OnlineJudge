@@ -58,11 +58,21 @@
                 </select>
                 <div class="code-editor-box">
                     <h2>Code Editor</h2>
-                    <textarea name='code' rows="20" cols="100"></textarea>
+                    <textarea name='user_code' rows="20" cols="100"></textarea>
                 </div>
             </div>
             <div id="flexbox">
-                <h5 class="iov">Verdict</h5>
+                <h5 class="iov">Verdict
+                    <p>
+                        {% comment %} <li>code:{{Code}}</li> {% endcomment %}
+                        {% comment %} <li>lang:{{lang}}</li> {% endcomment %}
+                        {% comment %} <li>res:{{res}}</li> {% endcomment %}
+                        <li>verdict:{{verdict}}</li>
+                        {{user_stderr}}
+                        {% comment %} <li> user_stdout:{{user_stdout}}</li> {% endcomment %}
+                        {% comment %} <li>verdict:{{user_stderr}}</li> {% endcomment %}
+                    </p>
+                </h5>
                 <button type="submit">Submit</button>
             </div>
         </div>

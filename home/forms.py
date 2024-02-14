@@ -5,5 +5,5 @@ from User.models import Submission
 class CodeForm(ModelForm):
     class Meta:
         model = Submission
-        fields = ['user_code']
+        fields = ['user_code','language']
         widgets = {'user_code' : forms.Textarea()}

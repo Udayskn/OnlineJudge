@@ -23,8 +23,8 @@ def registerpage(request):
             messages.info(request,'Username is already taken')
         else:
             user = User.objects.create_user(username=username, password=password)
-            user.save()
-            messages.info(request, 'Your registration is successful, now continue to login')
+            user.save() 
+            messages.info(request, 'Your registration is successful.')
             auth.login(request,user)
             return redirect('/List/')
     return render(request,'User\\register.html')
